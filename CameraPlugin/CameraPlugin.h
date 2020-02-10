@@ -10,6 +10,6 @@ private:
 public:
 	virtual void onLoad();
 	virtual void onUnload();
-	virtual ProfileCameraSettings generateRandomSettings();
+	virtual void generateRandomSettings();
 	virtual void logSettings();
 };

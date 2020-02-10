@@ -21,12 +21,15 @@ int SWIVELSPEED_MAX = 10;
 int TRANSITIONSPEED_MIN = 1;
 int TRANSITIONSPEED_MAX = 2;
 
+// Keep track of the current random Camera Settings Profile
+ProfileCameraSettings settings;
+
 BAKKESMOD_PLUGIN(CameraPlugin, "Camera plugin", "0.1", PLUGINTYPE_THREADED);
 
 /*
 Generates a random ProfileCameraSettings.
 */
-ProfileCameraSettings CameraPlugin::generateRandomSettings() {
+void CameraPlugin::generateRandomSettings() {
 	// Generate random values for each camera variable
 	FOV = rand() % (FOV_MAX - FOV_MIN + 1) + FOV_MIN;
 	HEIGHT = rand() % (HEIGHT_MAX - HEIGHT_MIN + 1) + HEIGHT_MIN;
@@ -37,9 +40,8 @@ ProfileCameraSettings CameraPlugin::generateRandomSettings() {
 	TRANSITIONSPEED = rand() % (SWIVELSPEED_MAX - SWIVELSPEED_MIN + 1) + SWIVELSPEED_MIN;
 
 	// Return the random ProfileCameraSettings
-	ProfileCameraSettings settings = { FOV, HEIGHT, ANGLE, DISTANCE, STIFFNESS, SWIVELSPEED, TRANSITIONSPEED };
+	settings = { FOV, HEIGHT, ANGLE, DISTANCE, STIFFNESS, SWIVELSPEED, TRANSITIONSPEED };
 	logSettings();
-	return settings;
 }
 
 void CameraPlugin::logSettings() {
@@ -53,6 +55,7 @@ void CameraPlugin::logSettings() {
 }
 
 void CameraPlugin::onLoad() {
+
 	// The body of the code will execute when the player type's "randomize_camera_settings" within the BakkesMod Developer Console
 	cvarManager->registerNotifier("randomize_camera_settings", [this](vector<string> commands) {
 		
@@ -63,11 +66,16 @@ void CameraPlugin::onLoad() {
 		CameraWrapper camera = gameWrapper->GetCamera();
 
 		// Generate a random Camera Settings Profile
-		ProfileCameraSettings settings = generateRandomSettings();
+		generateRandomSettings();
 
 		// Set the player's camera to the Camera Settings Profile
-		camera.SetCameraSettings(settings);	
+		camera.SetCameraSettings(settings);
+
 	}, "Randomizes the player's camera settings", PERMISSION_ALL);
+
+	// Toggling between car/ball cam should not revert to original camera settings
+	gameWrapper->HookEvent("Function TAGame.CameraState_BallCam_TA.BeginCameraState", [&](std::string eventName) {gameWrapper->GetCamera().SetCameraSettings(settings);});
+	gameWrapper->HookEvent("Function TAGame.CameraState_BallCam_TA.EndCameraState", [&](std::string eventName) {gameWrapper->GetCamera().SetCameraSettings(settings);});
 }
 
 void CameraPlugin::onUnload() {
