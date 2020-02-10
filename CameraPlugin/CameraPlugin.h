@@ -5,10 +5,11 @@
 class CameraPlugin : public BakkesMod::Plugin::BakkesModPlugin
 {
 private:
-	bool enabled = false;
-	float DISTANCE, FOV;
+	float FOV, HEIGHT, ANGLE, DISTANCE, STIFFNESS, SWIVELSPEED, TRANSITIONSPEED;
 
 public:
 	virtual void onLoad();
 	virtual void onUnload();
+	virtual ProfileCameraSettings generateRandomSettings();
+	virtual void logSettings();
 };
