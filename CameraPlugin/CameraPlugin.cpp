@@ -35,9 +35,9 @@ void CameraPlugin::generateRandomSettings() {
 	HEIGHT = rand() % (HEIGHT_MAX - HEIGHT_MIN + 1) + HEIGHT_MIN;
 	ANGLE = rand() % (ANGLE_MAX - ANGLE_MIN + 1) + ANGLE_MIN;
 	DISTANCE = rand() % (DISTANCE_MAX - DISTANCE_MIN + 1) + DISTANCE_MIN;
-	STIFFNESS = rand() % (STIFFNESS_MAX - STIFFNESS_MIN + 1) + STIFFNESS_MIN;
-	SWIVELSPEED = rand() % (SWIVELSPEED_MAX - SWIVELSPEED_MIN + 1) + SWIVELSPEED_MIN;
-	TRANSITIONSPEED = rand() % (SWIVELSPEED_MAX - SWIVELSPEED_MIN + 1) + SWIVELSPEED_MIN;
+	STIFFNESS = STIFFNESS_MIN + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/(STIFFNESS_MAX-STIFFNESS_MIN)));
+	SWIVELSPEED = SWIVELSPEED_MIN + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/(SWIVELSPEED_MAX-SWIVELSPEED_MIN)));
+	TRANSITIONSPEED = TRANSITIONSPEED_MIN + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX/(TRANSITIONSPEED_MAX-TRANSITIONSPEED_MIN)));
 
 	// Return the random ProfileCameraSettings
 	settings = { FOV, HEIGHT, ANGLE, DISTANCE, STIFFNESS, SWIVELSPEED, TRANSITIONSPEED };
