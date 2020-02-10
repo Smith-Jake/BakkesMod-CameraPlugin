@@ -58,8 +58,9 @@ void CameraPlugin::onLoad() {
 
 	// The body of the code will execute when the player type's "randomize_camera_settings" within the BakkesMod Developer Console
 	cvarManager->registerNotifier("randomize_camera_settings", [this](vector<string> commands) {
-		
-		if (!gameWrapper->IsInFreeplay())
+
+		if (!gameWrapper->IsInGame() &&
+			!gameWrapper->IsInOnlineGame())
 			return;
 
 		// Get the camera of the player

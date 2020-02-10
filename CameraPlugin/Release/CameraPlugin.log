@@ -954,11 +954,13 @@ c:\users\jake\desktop\bakkesmodplugins\cameraplugin\cameraplugin\cameraplugin.cp
 c:\users\jake\desktop\bakkesmodplugins\cameraplugin\cameraplugin\cameraplugin.cpp(37): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
      Creating library C:\Users\Jake\Desktop\BakkesModPlugins\CameraPlugin\Release\CameraPlugin.lib and object C:\Users\Jake\Desktop\BakkesModPlugins\CameraPlugin\Release\CameraPlugin.exp
   Generating code
-  85 of 304 functions (28.0%) were compiled, the rest were copied from previous compilation.
-    84 functions were new in current compilation
-    6 functions had inline decision re-evaluated but remain unchanged
+  73 of 304 functions (24.0%) were compiled, the rest were copied from previous compilation.
+    72 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   CameraPlugin.vcxproj -> C:\Users\Jake\Desktop\BakkesModPlugins\CameraPlugin\Release\CameraPlugin.dll
   Patching Plugin
-  04:42:53 [INFO] Copying plugin to S:\Steam\steamapps\common\rocketleague\Binaries\Win32\bakkesmod\plugins\CameraPlugin.dll
-  04:42:53 [INFO] Done
+  05:01:34 [INFO] Unloading CameraPlugin
+  05:01:35 [INFO] Copying plugin to S:\Steam\steamapps\common\rocketleague\Binaries\Win32\bakkesmod\plugins\CameraPlugin.dll
+  05:01:35 [INFO] Loading CameraPlugin
+  05:01:35 [INFO] Done
