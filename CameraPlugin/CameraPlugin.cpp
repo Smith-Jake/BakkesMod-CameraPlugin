@@ -71,11 +71,11 @@ void CameraPlugin::onLoad() {
 		// Set the player's camera to the Camera Settings Profile
 		camera.SetCameraSettings(settings);
 
-	}, "Randomizes the player's camera settings", PERMISSION_ALL);
+		// Toggling between car/ball cam should not revert to original camera settings
+		gameWrapper->HookEvent("Function TAGame.CameraState_BallCam_TA.BeginCameraState", [&](std::string eventName) {gameWrapper->GetCamera().SetCameraSettings(settings);});
+		gameWrapper->HookEvent("Function TAGame.CameraState_BallCam_TA.EndCameraState", [&](std::string eventName) {gameWrapper->GetCamera().SetCameraSettings(settings);});
 
-	// Toggling between car/ball cam should not revert to original camera settings
-	gameWrapper->HookEvent("Function TAGame.CameraState_BallCam_TA.BeginCameraState", [&](std::string eventName) {gameWrapper->GetCamera().SetCameraSettings(settings);});
-	gameWrapper->HookEvent("Function TAGame.CameraState_BallCam_TA.EndCameraState", [&](std::string eventName) {gameWrapper->GetCamera().SetCameraSettings(settings);});
+	}, "Randomizes the player's camera settings", PERMISSION_ALL);
 }
 
 void CameraPlugin::onUnload() {
