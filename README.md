@@ -21,4 +21,5 @@
 ### Use the Camera Plugin
 10. Close out of the Plugin manager and BakkesMod settings
 11. While in a game, click ` to open the Developer console
-12. Type ```randomize_camera_settings``` in the Developer Console and click ```Enter```
+12. If you want to randomize your camera settings, type ```randomize_camera_settings``` in the Developer Console and click ```Enter```
+13. If you want to revert to your original camera settings, type ```revert_camera_settings``` in the Developer Console and click ```Enter```
