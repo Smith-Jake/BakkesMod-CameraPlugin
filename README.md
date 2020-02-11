@@ -2,7 +2,7 @@
 ## This is a plugin for BakkesMod that allows the user to randomize their in-game camera settings.
 
 ### Install
-1. Go to the ```Release``` folder
+1. Go to the ```release``` tab
 2. Download the ```CameraPlugin.dll``` file
 3. Move the ```CameraPlugin.dll``` file into your BakkesMod plugins directory. For example, my directory is ```S:\Steam\steamapps\common\rocketleague\Binaries\Win32\bakkesmod\plugins```
 
