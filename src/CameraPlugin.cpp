@@ -1,4 +1,3 @@
-#include "pch.h";
 #include "CameraPlugin.h";
 #include <filesystem>;
 
