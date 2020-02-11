@@ -1,4 +1,5 @@
-﻿  CameraPlugin.cpp
+﻿  pch.cpp
+  CameraPlugin.cpp
 c:\users\jake\desktop\bakkesmodplugins\cameraplugin\cameraplugin\cameraplugin.cpp(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 c:\users\jake\desktop\bakkesmodplugins\cameraplugin\cameraplugin\cameraplugin.cpp(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 c:\users\jake\desktop\bakkesmodplugins\cameraplugin\cameraplugin\cameraplugin.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
@@ -948,19 +949,16 @@ c:\users\jake\desktop\bakkesmodplugins\bakkesmodsdk\include\bakkesmod\plugin\bak
 c:\users\jake\desktop\bakkesmodplugins\bakkesmodsdk\include\bakkesmod\plugin\bakkesmodplugin.h(62): warning C4251: 'BakkesMod::Plugin::BakkesModPlugin::gameWrapper': class 'std::shared_ptr<GameWrapper>' needs to have dll-interface to be used by clients of class 'BakkesMod::Plugin::BakkesModPlugin'
   c:\users\jake\desktop\bakkesmodplugins\bakkesmodsdk\include\bakkesmod\plugin\bakkesmodplugin.h(62): note: see declaration of 'std::shared_ptr<GameWrapper>'
 c:\users\jake\desktop\bakkesmodplugins\cameraplugin\cameraplugin\cameraplugin.cpp(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-c:\users\jake\desktop\bakkesmodplugins\cameraplugin\cameraplugin\cameraplugin.cpp(34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\jake\desktop\bakkesmodplugins\cameraplugin\cameraplugin\cameraplugin.cpp(35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\jake\desktop\bakkesmodplugins\cameraplugin\cameraplugin\cameraplugin.cpp(36): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\jake\desktop\bakkesmodplugins\cameraplugin\cameraplugin\cameraplugin.cpp(37): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\jake\desktop\bakkesmodplugins\cameraplugin\cameraplugin\cameraplugin.cpp(32): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\jake\desktop\bakkesmodplugins\cameraplugin\cameraplugin\cameraplugin.cpp(33): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\jake\desktop\bakkesmodplugins\cameraplugin\cameraplugin\cameraplugin.cpp(34): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\jake\desktop\bakkesmodplugins\cameraplugin\cameraplugin\cameraplugin.cpp(35): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  dllmain.cpp
      Creating library C:\Users\Jake\Desktop\BakkesModPlugins\CameraPlugin\Release\CameraPlugin.lib and object C:\Users\Jake\Desktop\BakkesModPlugins\CameraPlugin\Release\CameraPlugin.exp
   Generating code
-  73 of 304 functions (24.0%) were compiled, the rest were copied from previous compilation.
-    72 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  All 329 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   CameraPlugin.vcxproj -> C:\Users\Jake\Desktop\BakkesModPlugins\CameraPlugin\Release\CameraPlugin.dll
   Patching Plugin
-  05:01:34 [INFO] Unloading CameraPlugin
-  05:01:35 [INFO] Copying plugin to S:\Steam\steamapps\common\rocketleague\Binaries\Win32\bakkesmod\plugins\CameraPlugin.dll
-  05:01:35 [INFO] Loading CameraPlugin
-  05:01:35 [INFO] Done
+  05:31:20 [INFO] Copying plugin to S:\Steam\steamapps\common\rocketleague\Binaries\Win32\bakkesmod\plugins\CameraPlugin.dll
+  05:31:20 [INFO] Done

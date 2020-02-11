@@ -11,5 +11,6 @@ public:
 	virtual void onLoad();
 	virtual void onUnload();
 	virtual void generateRandomSettings();
-	virtual void logSettings();
+	virtual void logSettings(ProfileCameraSettings settings);
+	virtual bool isEmptySettings(ProfileCameraSettings settings);
 };
